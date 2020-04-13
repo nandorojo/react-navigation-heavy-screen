@@ -1,17 +1,13 @@
 {
   "name": "react-navigation-heavy-screen",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Optimize heavy screens to prevent lags with React Navigation.",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
   "types": "lib/typescript/src/index.d.ts",
   "react-native": "src/index.tsx",
   "files": [
-    "src",
-    "lib",
-    "android",
-    "ios",
-    "reactnativeheavyscreen.podspec"
+    "lib"
   ],
   "scripts": {
     "test": "jest",
@@ -28,7 +24,7 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/nandorojo/react-native-heavy-screen",
+  "repository": "https://github.com/nandorojo/react-navigation-heavy-screen",
   "author": "Fernando Rojo <frojo@sas.upenn.edu> (https://github.com/nandorojo)",
   "license": "MIT",
   "bugs": {
