@@ -1,0 +1,6 @@
+{
+	"extends": ["nando"],
+	"rules": {
+		"@typescript-eslint/indent": "off"
+	}
+}
