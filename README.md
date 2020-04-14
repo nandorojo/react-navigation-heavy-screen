@@ -4,6 +4,8 @@ Optimize heavy screens in **React Native** to prevent lags with React Navigation
 
 This isn't actually specific to React Navigation, but I find myself using it there often.
 
+Especially useful for screens that set up listeners, make network requests, etc.
+
 ## Usage
 
 ```js
