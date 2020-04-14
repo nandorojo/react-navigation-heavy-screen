@@ -1,4 +1,4 @@
-# ⚡️ Speed up heavy screens
+# ⚡️ Speed up heavy React Native screens
 
 Optimize heavy screens in **React Native** to prevent lags with React Navigation's stack.
 
