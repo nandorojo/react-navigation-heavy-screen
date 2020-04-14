@@ -22,7 +22,7 @@ import { optimizeHeavyScreen } from 'react-navigation-heavy-screen'
 export default optimizeHeavyScreen(require('path/to/HeavyScreen'), OptionalPlaceHolderScreen)
 ```
 
-_Thanks to [@Sebastien Lorber](https://twitter.com/sebastienlorber) for this recommendation ^_
+_Thanks to [@Sebastien Lorber](https://twitter.com/sebastienlorber/status/1250113509880401933) for this recommendation ^_
 
 ## Installation
 
