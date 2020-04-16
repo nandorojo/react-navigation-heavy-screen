@@ -1,13 +1,14 @@
 {
   "name": "react-navigation-heavy-screen",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Optimize heavy screens to prevent lags with React Navigation.",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
   "types": "lib/typescript/index.d.ts",
   "react-native": "src/index.tsx",
   "files": [
-    "lib"
+    "lib",
+    "src"
   ],
   "scripts": {
     "test": "jest",
