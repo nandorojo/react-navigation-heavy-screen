@@ -1,8 +1,10 @@
-# ⚡️ Speed up heavy screens
+# ⚡️ Speed up heavy React Native screens
 
 Optimize heavy screens in **React Native** to prevent lags with React Navigation's stack.
 
 This isn't actually specific to React Navigation, but I find myself using it there often.
+
+Especially useful for screens that set up listeners, make network requests, etc.
 
 ## Usage
 
@@ -13,6 +15,16 @@ const Screen = () => ...
 
 export default optimizeHeavyScreen(Screen, OptionalPlaceHolderScreen)
 ```
+
+Or you can require your heavy screen inline:
+
+```js
+import { optimizeHeavyScreen } from 'react-navigation-heavy-screen'
+
+export default optimizeHeavyScreen(require('path/to/HeavyScreen'), OptionalPlaceHolderScreen)
+```
+
+_Thanks to [@Sebastien Lorber](https://twitter.com/sebastienlorber/status/1250113509880401933) for this recommendation ^_
 
 ## Installation
 
@@ -28,7 +40,9 @@ expo install react-native-reanimated
 
 ## What does it do?
 
-Delay rendering a component until interactions are complete, using `InteractionManager`.
+Delay rendering a component until interactions are complete, using `InteractionManager`. Then it fades in your screen.
+
+---
 
 ## `optimizeHeavyScreen(Screen, Placeholder, options)`
 
