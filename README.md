@@ -51,7 +51,7 @@ import { optimizeHeavyScreen } from 'react-navigation-heavy-screen'
 
 export default optimizeHeavyScreen(Screen, OptionalPlaceHolderScreen, {
   // default values
-  disableHoistStaics: false,
+  disableHoistStatics: false,
   transition: (
     <Transition.Together>
       <Transition.Change interpolation="easeInOut" />
