@@ -65,7 +65,7 @@ Delay rendering a component until interactions are complete, using `InteractionM
 
 ---
 
-## `<OptimizedHeavyScreen />
+## `<OptimizedHeavyScreen />`
 
 ### Props
 
