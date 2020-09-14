@@ -8,6 +8,24 @@ Especially useful for screens that set up listeners, make network requests, etc.
 
 ## Usage
 
+🥳 New component-based API! Use this if you only want to optimize certain content on your screen.
+
+```jsx
+import React from 'react'
+import { OptimizedHeavyScreen } from 'react-native-heavy-screen'
+
+const Screen = () => (
+  <>
+    <NonExpensiveComponentHere />
+    <OptimizedHeavyScreen>
+      <MyHeavyComponentHere />
+    </OptimizedHeavyScreen>
+  </>
+)
+```
+
+You can also use the normal export usage. Use this if you want to optimize your whole screen.
+
 ```js
 import { optimizeHeavyScreen } from 'react-navigation-heavy-screen'
 
@@ -21,7 +39,10 @@ Or you can require your heavy screen inline:
 ```js
 import { optimizeHeavyScreen } from 'react-navigation-heavy-screen'
 
-export default optimizeHeavyScreen(require('path/to/HeavyScreen'), OptionalPlaceHolderScreen)
+export default optimizeHeavyScreen(
+  require('path/to/HeavyScreen'),
+  OptionalPlaceHolderScreen
+)
 ```
 
 _Thanks to [@Sebastien Lorber](https://twitter.com/sebastienlorber/status/1250113509880401933) for this recommendation ^_
@@ -43,6 +64,26 @@ expo install react-native-reanimated
 Delay rendering a component until interactions are complete, using `InteractionManager`. Then it fades in your screen.
 
 ---
+
+## `<OptimizedHeavyScreen />
+
+### Props
+
+- `placeholder` (optional) Non-heavy React component that renders in the meantime.
+- `transition`: (optional) custom transition prop for Reanimated's `Transitioning.View` component. See `react-native-reanimated` [docs](https://software-mansion.github.io/react-native-reanimated/transitions.html) and Transition [examples](https://github.com/software-mansion/react-native-reanimated/tree/master/Example/src/transitions).
+
+```js
+import React from 'react'
+import { OptimizedHeavyScreen } from 'react-navigation-heavy-screen'
+
+const Screen () => (
+  <OptimizedHeavyScreen>
+    <YourHeavyComponent />
+  </OptimizedHeavyScreen>
+)
+
+export default Screen
+```
 
 ## `optimizeHeavyScreen(Screen, Placeholder, options)`
 
