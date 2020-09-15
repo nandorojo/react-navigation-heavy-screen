@@ -1,5 +1,5 @@
 import React, { ComponentPropsWithoutRef, ComponentType } from 'react'
-import { Transitioning } from 'react-native-reanimated'
+import { Transition, Transitioning } from 'react-native-reanimated'
 import { useAfterInteractions } from './use-after-interactions'
 
 interface Props {
@@ -10,7 +10,12 @@ interface Props {
 }
 
 const OptimizedHeavyScreen = ({
-  transition,
+  transition = (
+    <Transition.Together>
+      <Transition.Change interpolation="easeInOut" />
+      <Transition.In type="fade" />
+    </Transition.Together>
+  ),
   style,
   children,
   placeHolder: Placeholder,
