@@ -12,7 +12,7 @@ Especially useful for screens that set up listeners, make network requests, etc.
 
 ```jsx
 import React from 'react'
-import { OptimizedHeavyScreen } from 'react-native-heavy-screen'
+import { OptimizedHeavyScreen } from 'react-navigation-heavy-screen'
 
 const Screen = () => (
   <>
