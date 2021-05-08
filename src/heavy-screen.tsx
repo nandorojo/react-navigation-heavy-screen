@@ -36,4 +36,4 @@ const OptimizedHeavyScreen = ({
   )
 }
 
-export default OptimizedHeavyScreen
+export { OptimizedHeavyScreen }
