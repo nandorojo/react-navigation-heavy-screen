@@ -1,28 +1,22 @@
 import React, { ComponentType, ComponentPropsWithoutRef } from 'react'
-import { Transition, Transitioning } from 'react-native-reanimated'
+import Animated from 'react-native-reanimated'
 // @ts-ignore
 import hoistNonReactStatics from 'hoist-non-react-statics'
 import { useAfterInteractions } from './use-after-interactions'
 import { StyleSheet } from 'react-native'
 
+interface optimizeHeavyScreenOptions extends ComponentPropsWithoutRef<typeof Animated.View> {
+  disableHoistStatics?: boolean
+}
+
 export function optimizeHeavyScreen<Props>(
 	Component: ComponentType<Props>,
 	Placeholder: ComponentType | null = null,
-	options: {
-		disableHoistStatics?: boolean
-		transition?: ComponentPropsWithoutRef<
-			typeof Transitioning.View
-		>['transition']
-	} = {}
+	options: optimizeHeavyScreenOptions = {}
 ) {
 	const {
 		disableHoistStatics = false,
-		transition = (
-			<Transition.Together>
-				<Transition.Change interpolation="easeInOut" />
-				<Transition.In type="fade" />
-			</Transition.Together>
-		),
+    ...rest
 	} = options
 	const OptimizedHeavyScreen = (props: Props) => {
 		const {
@@ -30,8 +24,8 @@ export function optimizeHeavyScreen<Props>(
 			areInteractionsComplete,
 		} = useAfterInteractions()
 		return (
-			<Transitioning.View
-				transition={transition}
+			<Animated.View
+        {...rest}
 				style={styles.container}
 				ref={transitionRef}
 			>
@@ -40,7 +34,7 @@ export function optimizeHeavyScreen<Props>(
 				) : !!Placeholder ? (
 					<Placeholder />
 				) : null}
-			</Transitioning.View>
+			</Animated.View>
 		)
 	}
 	if (!disableHoistStatics) {

@@ -2,7 +2,8 @@ import React, { ComponentPropsWithoutRef, ComponentType } from 'react'
 import Animated, { FadeIn, FadeOut } from 'react-native-reanimated'
 import { useAfterInteractions } from './use-after-interactions'
 
-interface Props extends ComponentPropsWithoutRef<typeof Transitioning.View> {
+interface Props extends ComponentPropsWithoutRef<typeof Animated.View> {
+  children?: React.ReactNode,
   placeHolder?: ComponentType
 }
 
@@ -14,7 +15,6 @@ const OptimizedHeavyScreen = ({
   const { transitionRef, areInteractionsComplete } = useAfterInteractions()
   return (
     <Animated.View
-      style={style}
       entering={FadeIn}
       exiting={FadeOut}
       {...rest}
