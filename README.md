@@ -70,7 +70,7 @@ Delay rendering a component until interactions are complete, using `InteractionM
 ### Props
 
 - `placeholder` (optional) Non-heavy React component that renders in the meantime.
-- `transition`: (optional) custom transition prop for Reanimated's `Transitioning.View` component. See `react-native-reanimated` [docs](https://software-mansion.github.io/react-native-reanimated/transitions.html) and Transition [examples](https://github.com/software-mansion/react-native-reanimated/tree/master/Example/src/transitions).
+- Extends `Animated.View` props [docs](https://software-mansion.github.io/react-native-reanimated). So you can pass any props you need to customize the animation. eg: `{ entering: { FadeIn } }`
 
 ```js
 import React from 'react'
@@ -93,12 +93,6 @@ import { optimizeHeavyScreen } from 'react-navigation-heavy-screen'
 export default optimizeHeavyScreen(Screen, OptionalPlaceHolderScreen, {
   // default values
   disableHoistStatics: false,
-  transition: (
-    <Transition.Together>
-      <Transition.Change interpolation="easeInOut" />
-      <Transition.In type="fade" />
-    </Transition.Together>
-  ),
 })
 ```
 
@@ -108,7 +102,7 @@ export default optimizeHeavyScreen(Screen, OptionalPlaceHolderScreen, {
 - `Placeholder` (optional) Non-heavy React component that renders in the meantime.
 - `options` (optional) Dictionary with the following options:
   - `disableHoistStatics`: (optional) If `true`, the `Screen`'s statics (like `navigationOptions`, etc.) will not be passed on. Default: `false`.
-  - `transition`: (optional) custom transition prop for Reanimated's `Transitioning.View` component. See `react-native-reanimated` [docs](https://software-mansion.github.io/react-native-reanimated/transitions.html) and Transition [examples](https://github.com/software-mansion/react-native-reanimated/tree/master/Example/src/transitions).
+  - Extends `Animated.View` props [docs](https://software-mansion.github.io/react-native-reanimated). So you can pass any props you need to customize the animation. eg: `{ entering: { FadeIn } }`
 
 ## License
 
