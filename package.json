@@ -46,7 +46,7 @@
     "jest": "^25.1.0",
     "react": "^16.13.1",
     "react-native": "~0.61.5",
-    "react-native-reanimated": "^1.8.0",
+    "react-native-reanimated": "^2.10.0",
     "release-it": "^12.6.3",
     "typescript": "^3.7.5"
   },
